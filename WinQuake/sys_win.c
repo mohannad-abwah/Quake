@@ -24,6 +24,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 #include "errno.h"
 #include "resource.h"
 #include "conproc.h"
+#include <direct.h>
 
 #define MINIMUM_WIN_MEMORY		0x0880000
 #define MAXIMUM_WIN_MEMORY		0x1000000
@@ -270,8 +271,6 @@ void Sys_MakeCodeWriteable (unsigned long startaddr, unsigned long length)
 }
 
 
-#ifndef _M_IX86
-
 void Sys_SetFPCW (void)
 {
 }
@@ -287,8 +286,6 @@ void Sys_PopFPCW (void)
 void MaskExceptions (void)
 {
 }
-
-#endif
 
 /*
 ================
